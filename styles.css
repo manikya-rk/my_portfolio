@@ -8,6 +8,9 @@
     --dark: #212529;
     --accent: #ff6584;
     --success: #4CAF50;
+    --dark-bg: #0f0f1b;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --border-color: rgba(255, 255, 255, 0.1);
 }
 
 * {
@@ -18,7 +21,7 @@
 }
 
 body {
-    background-color: #0f0f1b;
+    background-color: var(--dark-bg);
     color: var(--light);
     overflow-x: hidden;
     line-height: 1.6;
@@ -87,7 +90,7 @@ nav {
     z-index: 1000;
     backdrop-filter: blur(10px);
     background: rgba(15, 15, 27, 0.8);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--border-color);
 }
 
 nav .container {
@@ -343,13 +346,13 @@ nav .container {
 }
 
 .stat-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--card-bg);
     backdrop-filter: blur(10px);
     border-radius: 12px;
     padding: 25px 20px;
     text-align: center;
     transition: transform 0.3s;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
 }
 
 .stat-card:hover {
@@ -377,13 +380,13 @@ nav .container {
 }
 
 .skill-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--card-bg);
     backdrop-filter: blur(10px);
     border-radius: 12px;
     padding: 30px 25px;
     text-align: center;
     transition: all 0.3s;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
 }
 
 .skill-card:hover {
@@ -411,66 +414,132 @@ nav .container {
 
 /* Experience Section */
 .experience-timeline {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
 .experience-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--card-bg);
     backdrop-filter: blur(10px);
     border-radius: 12px;
     padding: 30px;
     margin-bottom: 25px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    gap: 20px;
+    position: relative;
+}
+
+.experience-card.current {
+    border-left: 4px solid var(--primary);
 }
 
 .experience-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     background: rgba(108, 99, 255, 0.08);
 }
 
-.exp-header {
-    margin-bottom: 20px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+.exp-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(108, 99, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
-.exp-header h3 {
-    font-size: 1.5rem;
+.exp-icon i {
+    font-size: 1.8rem;
     color: var(--primary);
+}
+
+.exp-content {
+    flex: 1;
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.exp-title h3 {
+    font-size: 1.5rem;
+    color: var(--light);
     margin-bottom: 5px;
+}
+
+.company {
+    color: var(--primary);
+    font-weight: 500;
+    font-size: 1.1rem;
 }
 
 .exp-date {
     color: var(--accent);
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 4px 12px;
+    background: rgba(255, 101, 132, 0.1);
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.exp-location {
+    color: rgba(255, 255, 255, 0.7);
     font-size: 0.9rem;
-    display: block;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
-.exp-header h4 {
-    font-size: 1.2rem;
-    color: var(--light);
+.exp-location i {
+    color: var(--accent);
+    font-size: 0.8rem;
 }
 
-.exp-content ul {
+.exp-responsibilities {
     list-style: none;
-    padding-left: 0;
+    margin-bottom: 20px;
 }
 
-.exp-content li {
+.exp-responsibilities li {
     margin-bottom: 10px;
-    padding-left: 22px;
+    padding-left: 24px;
     position: relative;
     line-height: 1.6;
+    opacity: 0.9;
 }
 
-.exp-content li::before {
+.exp-responsibilities li::before {
     content: '▸';
     position: absolute;
     left: 0;
     color: var(--primary);
+    font-weight: bold;
+}
+
+.exp-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    background: rgba(108, 99, 255, 0.1);
+    color: var(--primary);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
 }
 
 /* Projects Section */
@@ -481,12 +550,12 @@ nav .container {
 }
 
 .project-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--card-bg);
     backdrop-filter: blur(10px);
     border-radius: 12px;
     overflow: hidden;
     transition: all 0.3s;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -546,7 +615,7 @@ nav .container {
     align-items: center;
     gap: 5px;
     background: rgba(76, 175, 80, 0.2);
-    color: #4CAF50;
+    color: var(--success);
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 0.85rem;
@@ -577,9 +646,9 @@ nav .container {
 
 .contact-form input,
 .contact-form textarea {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--card-bg);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
     padding: 14px 18px;
     border-radius: 8px;
     color: white;
@@ -611,31 +680,46 @@ nav .container {
     gap: 15px;
 }
 
-.contact-info a {
+.contact-item {
     display: flex;
     align-items: center;
     color: white;
     text-decoration: none;
-    font-size: 1rem;
-    padding: 14px 18px;
-    background: rgba(255, 255, 255, 0.05);
+    padding: 16px 20px;
+    background: var(--card-bg);
     backdrop-filter: blur(10px);
     border-radius: 8px;
     transition: all 0.3s;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
+    gap: 15px;
 }
 
-.contact-info a:hover {
+.contact-item:hover {
     background: rgba(108, 99, 255, 0.1);
     transform: translateX(8px);
 }
 
-.contact-info a i {
-    margin-right: 12px;
+.contact-item i {
     color: var(--primary);
-    font-size: 1.1rem;
-    width: 20px;
+    font-size: 1.2rem;
+    width: 24px;
     text-align: center;
+}
+
+.contact-item div {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-item strong {
+    font-size: 0.9rem;
+    color: var(--primary);
+    margin-bottom: 3px;
+}
+
+.contact-item span {
+    font-size: 0.95rem;
+    opacity: 0.9;
 }
 
 /* Footer */
@@ -643,12 +727,18 @@ footer {
     text-align: center;
     padding: 25px 0;
     background: rgba(15, 15, 27, 0.8);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--border-color);
 }
 
 footer p {
     opacity: 0.7;
     font-size: 0.9rem;
+}
+
+.footer-sub {
+    margin-top: 5px;
+    color: var(--primary);
+    font-weight: 500;
 }
 
 /* Responsive Design */
@@ -740,6 +830,22 @@ footer p {
 
     .about-stats {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .experience-card {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .exp-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .exp-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
     }
 }
 
