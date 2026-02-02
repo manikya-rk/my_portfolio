@@ -29,6 +29,16 @@ const navLinksContainer = document.querySelector('.nav-links');
 menuToggle.addEventListener('click', () => {
     navLinksContainer.classList.toggle('active');
     menuToggle.classList.toggle('active');
+    
+    // Change icon
+    const icon = menuToggle.querySelector('i');
+    if (navLinksContainer.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+    } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    }
 });
 
 // Close menu when clicking a link
@@ -36,6 +46,9 @@ navLinks.forEach(link => {
     link.addEventListener('click', () => {
         navLinksContainer.classList.remove('active');
         menuToggle.classList.remove('active');
+        const icon = menuToggle.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
     });
 });
 
@@ -43,14 +56,20 @@ navLinks.forEach(link => {
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
     });
 });
 
-// Form Submission Feedback
+// Form Submission
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
@@ -64,15 +83,4 @@ if (contactForm) {
         
         // Simulate form submission
         setTimeout(() => {
-            submitButton.innerHTML = '<i class="fas fa-check"></i> Sent!';
-            setTimeout(() => {
-                window.location.href = '/thank-you.html';
-            }, 1000);
-        }, 1500);
-    });
-}
-
-// Initialize
-document.addEventListener('DOMContentLoaded', () => {
-    activateNavLink();
-});
+            submitButton.innerHTML
