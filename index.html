@@ -1,329 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manikya Kolekar | Implementation Engineer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manikya Kolekar | Implementation Engineer</title>
+  <meta name="description" content="Manikya Kolekar — Implementation Engineer in Bengaluru delivering enterprise SaaS implementations, REST API integrations with SAP and Salesforce, and data automation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <!-- Animated Background -->
-    <div class="bg-animation">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
+
+  <header class="nav" id="top">
+    <div class="wrap nav-inner">
+      <a href="#top" class="brand">Manikya<span>.</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#approach">Approach</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact" class="nav-cta">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" aria-label="Open menu"><i class="fas fa-bars"></i></button>
     </div>
+  </header>
 
-    <!-- Navbar -->
-    <nav>
-        <div class="container">
-            <a href="#" class="logo">MK</a>
-            <ul class="nav-links">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow"><span class="dot"></span> Implementation Engineer · Bengaluru</p>
+          <h1>I turn enterprise requirements into <em>working, integrated systems.</em></h1>
+          <p class="lead">2+ years delivering enterprise SaaS implementations end-to-end — from requirements and data migration through UAT, go-live and production support. I build the APIs, pipelines and automations that connect platforms like SAP and Salesforce.</p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">See my work</a>
+            <a href="Manikya_Kolekar_Resume.pdf" class="btn btn-ghost" download><i class="fas fa-arrow-down"></i> Resume</a>
+          </div>
+          <div class="socials">
+            <a href="https://linkedin.com/in/manikya-r-k" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/manikya-rk" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="mailto:manikyakolekar@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          </div>
         </div>
-    </nav>
+        <div class="hero-photo">
+          <div class="photo-frame">
+            <img src="my image.png" alt="Manikya Kolekar">
+          </div>
+          <div class="float-card fc-1"><strong>30 days → 3 hrs</strong><span>warehouse onboarding</span></div>
+          <div class="float-card fc-2"><strong>40+</strong><span>REST APIs shipped</span></div>
+        </div>
+      </div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Hi, I'm <span>Manikya Kolekar</span></h1>
-                <h2>Implementation Engineer</h2>
-                <p>Building automated solutions with Python, SQL, and SaaS systems to drive business efficiency. Specializing in SAP integration, workflow automation, and master data management.</p>
-                <div class="social-links">
-                    <a href="https://linkedin.com/in/manikya-r-k" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/manikya-r-k" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="mailto:manikyakolekar@gmail.com"><i class="fas fa-envelope"></i></a>
-                </div>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn">View My Work</a>
-                    <a href="Manikya_Kolekar_Resume (1).pdf" target="_blank" download class="btn secondary-btn">Download Resume</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="glow"></div>
-                <img src="my image.png" alt="Manikya Kolekar" class="profile-img">
-            </div>
-        </div>
+      <div class="wrap metrics">
+        <div class="metric"><strong data-count="6">6</strong><span>Enterprise SaaS implementations</span></div>
+        <div class="metric"><strong data-count="40" data-suffix="+">40+</strong><span>REST API integrations with SAP &amp; Salesforce</span></div>
+        <div class="metric"><strong data-count="300" data-suffix="+">300+</strong><span>Warehouses automated</span></div>
+        <div class="metric"><strong data-count="50" data-suffix="+">50+</strong><span>Client users trained</span></div>
+      </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About -->
     <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I'm an <strong>Implementation Engineer & Data Automation Specialist</strong> with expertise in Python, SQL, SAP integration, and workflow automation. Currently implementing enterprise systems at Zino Technologies while leveraging data analytics to optimize business processes.</p>
-                    <div class="education">
-                        <h3>Education</h3>
-                        <ul>
-                            <li><strong>SDM Institute of Technology</strong> | BE Information Science | GPA: 8.86/10.00 (Dec 2020 - May 2024)</li>
-                            <li><strong>Jawahar Navodaya Vidyalaya</strong> | CBSE</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="about-stats">
-                    <div class="stat-card">
-                        <h3>1+</h3>
-                        <p>Years Experience</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>15%</h3>
-                        <p>Manual Effort Reduced</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>30-35</h3>
-                        <p>Days to 3 Hours (Workflow Optimization)</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>25%</h3>
-                        <p>Platform Adoption Improved</p>
-                    </div>
-                </div>
-            </div>
+      <div class="wrap two-col">
+        <div>
+          <p class="kicker">About</p>
+          <h2>The bridge between the client and the code.</h2>
         </div>
+        <div class="prose">
+          <p>I'm an Implementation Engineer at <strong>Zino Technologies</strong>, where I own client delivery end-to-end. I sit with stakeholders to understand how their business actually runs, translate that into solution designs and integration specs, and then build what's needed to make it work — REST APIs, Python and SQL pipelines, validation rules and scheduled sync jobs.</p>
+          <p>My favourite kind of problem is a slow manual process hiding inside a big system. The warehouse network I worked on used to take a month to onboard a single site; after automating registration against SAP, it takes about three hours.</p>
+          <p>I hold a B.E. in Information Science from SDM Institute of Technology, and I care about clean data, clear communication and go-lives that don't need a firefight the next morning.</p>
+        </div>
+      </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <i class="fas fa-code"></i>
-                    <h3>Programming</h3>
-                    <p>Python, SQL, HTML/CSS, JavaScript</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-database"></i>
-                    <h3>Data & Analytics</h3>
-                    <p>Power BI, DAX, Power Query, Excel, Tableau</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-cogs"></i>
-                    <h3>Integration & Automation</h3>
-                    <p>REST APIs, Data Pipelines, Workflow Automation, SAP</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-tools"></i>
-                    <h3>Libraries & Tools</h3>
-                    <p>Pandas, NumPy, Postman, Git, MySQL, PostgreSQL</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-industry"></i>
-                    <h3>Domain Expertise</h3>
-                    <p>SaaS Implementation, Master Data Management, ETL, Client Onboarding</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-project-diagram"></i>
-                    <h3>Methodologies</h3>
-                    <p>Agile, UAT Coordination, Production Support</p>
-                </div>
+    <!-- Experience -->
+    <section id="experience" class="section alt">
+      <div class="wrap">
+        <p class="kicker">Experience</p>
+        <h2>Where I've been building.</h2>
+
+        <article class="job">
+          <div class="job-side">
+            <span class="job-date">Jun 2024 — Present</span>
+            <span class="job-loc"><i class="fas fa-location-dot"></i> Bengaluru, Karnataka</span>
+          </div>
+          <div class="job-main">
+            <h3>Implementation Engineer <span>@ Zino Technologies</span></h3>
+            <div class="job-groups">
+              <div>
+                <h4><i class="fas fa-handshake"></i> Client delivery</h4>
+                <ul>
+                  <li>Primary point of contact across 6 enterprise SaaS implementations, leading stakeholder communication and UAT through sign-off</li>
+                  <li>Gathered requirements and translated them into solution designs, integration specs and configuration plans</li>
+                  <li>Supported 4 production go-lives through stabilization, trained 50+ client users and handed off to Customer Success</li>
+                </ul>
+              </div>
+              <div>
+                <h4><i class="fas fa-plug"></i> Integration &amp; automation</h4>
+                <ul>
+                  <li>Developed 40+ REST APIs integrated with SAP and Salesforce, working with both teams to automate data exchange and sync</li>
+                  <li>Built Python and SQL workflows and pipelines that cut manual data tasks from 2+ hours to minutes</li>
+                  <li>Designed cron-based sync jobs that auto-create missing records and eliminate cross-system mismatches</li>
+                </ul>
+              </div>
+              <div>
+                <h4><i class="fas fa-database"></i> Data quality &amp; migration</h4>
+                <ul>
+                  <li>Executed data migration and validation for 4 client go-lives, reconciling records with SQL and Python</li>
+                  <li>Engineered form and master-data validation rules that stop invalid entries before they reach downstream systems</li>
+                </ul>
+              </div>
             </div>
-        </div>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="section">
-        <div class="container">
-            <h2 class="section-title">Professional Experience</h2>
-            <div class="experience-timeline">
-                <!-- Current Job -->
-                <div class="experience-card current">
-                    <div class="exp-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <div class="exp-content">
-                        <div class="exp-header">
-                            <div class="exp-title">
-                                <h3>Implementation Engineer</h3>
-                                <span class="company">Zino Technologies</span>
-                            </div>
-                            <span class="exp-date">Jun 2024 - Present</span>
-                        </div>
-                        <div class="exp-location">
-                            <i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka
-                        </div>
-                        <ul class="exp-responsibilities">
-                            <li>Implemented and supported enterprise and SaaS-based systems, ensuring stable releases and faster issue resolution</li>
-                            <li>Collaborated with business stakeholders to gather requirements and configure applications, reducing rework and change requests</li>
-                            <li>Built and optimized Python and SQL-based automation to validate, transform, and push master data into SAP systems, reducing manual effort by 15%</li>
-                            <li>Supported end-to-end client onboarding, UAT coordination, and production issue resolution</li>
-                        </ul>
-                        <div class="exp-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">SQL</span>
-                            <span class="tag">SAP</span>
-                            <span class="tag">Automation</span>
-                            <span class="tag">SaaS</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Internship -->
-                <div class="experience-card">
-                    <div class="exp-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <div class="exp-content">
-                        <div class="exp-header">
-                            <div class="exp-title">
-                                <h3>Data Science with AI/ML Intern</h3>
-                                <span class="company">Cranes Varsity</span>
-                            </div>
-                            <span class="exp-date">Aug 2023</span>
-                        </div>
-                        <div class="exp-location">
-                            <i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka
-                        </div>
-                        <ul class="exp-responsibilities">
-                            <li>Built and evaluated machine learning models using Python</li>
-                            <li>Automated data preprocessing workflows, reducing data preparation time by 30%</li>
-                        </ul>
-                        <div class="exp-tags">
-                            <span class="tag">Machine Learning</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">Data Preprocessing</span>
-                            <span class="tag">Automation</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
+    <!-- Projects -->
     <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title">Key Projects</h2>
-            <div class="projects-grid">
-                <!-- Warehouse Implementation Project -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Warehouse Implementation">
-                    </div>
-                    <div class="project-info">
-                        <h3>Warehouse Implementation & Master Data Automation (Adani Group)</h3>
-                        <p><strong>Tech Stack:</strong> Python, SQL, REST APIs, SAP</p>
-                        <p>Implemented and automated enterprise warehouse master data workflows for a large-scale supply chain system. Introduced DigiPIN-based location identification to uniquely and accurately map warehouse addresses. Re-engineered manual validation and approval workflows using Python and SQL-based automation, reducing warehouse creation turnaround time from 30-35 days to under 3 hours.</p>
-                        <div class="project-impact">
-                            <span class="impact-badge"><i class="fas fa-clock"></i> 30-35 days → 3 hours</span>
-                        </div>
-                    </div>
-                </div>
+      <div class="wrap">
+        <p class="kicker">Key projects</p>
+        <h2>Selected case studies.</h2>
 
-                <!-- Mentoring Platform Project -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Mentoring Platform">
-                    </div>
-                    <div class="project-info">
-                        <h3>Mentoring Platform Implementation</h3>
-                        <p><strong>Tech Stack:</strong> Workflow Automation, Dashboards, SaaS Configuration</p>
-                        <p>Implemented a web-based mentoring platform with role-based access and automated workflows. Automated onboarding, notifications, session tracking, and feedback capture. Designed dashboards to monitor mentor-mentee engagement and platform usage, improving platform adoption and engagement by 25%.</p>
-                        <div class="project-impact">
-                            <span class="impact-badge"><i class="fas fa-chart-line"></i> 25% adoption increase</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SaaS Reporting Project -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="SaaS Reporting">
-                    </div>
-                    <div class="project-info">
-                        <h3>SaaS Reporting & Workflow Automation</h3>
-                        <p><strong>Tech Stack:</strong> Python, SQL, Power BI</p>
-                        <p>Designed and implemented automated dashboards using Power BI to track operational KPIs. Built data pipelines using Python and SQL for data transformation and system integration. Automated recurring workflows, reducing manual operational effort by 15%.</p>
-                        <div class="project-impact">
-                            <span class="impact-badge"><i class="fas fa-robot"></i> 15% manual effort reduced</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sales Dashboard Project -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Sales Dashboard">
-                    </div>
-                    <div class="project-info">
-                        <h3>Sales & Performance Dashboard</h3>
-                        <p><strong>Tech Stack:</strong> Power BI, DAX, Power Query</p>
-                        <p>Developed interactive Power BI dashboards to analyze sales performance by region and category. Created DAX measures for KPIs including revenue, margins, and growth. Cleaned and transformed datasets using Power Query and calculated columns for enhanced data visualization.</p>
-                    </div>
-                </div>
+        <article class="case">
+          <div class="case-head">
+            <div>
+              <span class="case-date">Apr 2026 — Sep 2026</span>
+              <h3>Warehouse Implementation &amp; Master Data Automation</h3>
+              <p class="case-sub">Enterprise supply-chain client · 300+ warehouses across India</p>
             </div>
-        </div>
+            <div class="chips"><span>Python</span><span>SQL</span><span>REST APIs</span><span>SAP</span><span>DigiPIN</span></div>
+          </div>
+          <div class="case-body">
+            <div class="case-story">
+              <h4>The problem</h4>
+              <p>Registering a new warehouse meant a chain of manual entries, approvals and hand-offs into SAP — roughly 30 days per site, with inconsistent location data along the way.</p>
+              <h4>What I did</h4>
+              <ul>
+                <li>Took end-to-end ownership of the project and streamlined master-data workflows across the network</li>
+                <li>Automated warehouse registration end-to-end using Python, SQL and SAP APIs</li>
+                <li>Standardized warehouse locations with DigiPIN for unique, accurate addressing</li>
+                <li>Replaced manual post-approval triggers with scripted validation and a 5-minute cron job</li>
+              </ul>
+            </div>
+            <div class="case-results">
+              <div class="result"><strong>30 days → 3 hrs</strong><span>Warehouse onboarding time</span></div>
+              <div class="result"><strong>+30%</strong><span>Location data accuracy</span></div>
+              <div class="result"><strong>1 hr → &lt;5 min</strong><span>Post-approval processing</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="case-head">
+            <div>
+              <span class="case-date">Jan 2026 — Mar 2026</span>
+              <h3>Mentoring Platform Implementation</h3>
+              <p class="case-sub">NGO client · 15,000+ users</p>
+            </div>
+            <div class="chips"><span>Salesforce</span><span>Workflow Automation</span><span>Dashboards</span><span>SaaS Configuration</span></div>
+          </div>
+          <div class="case-body">
+            <div class="case-story">
+              <h4>The problem</h4>
+              <p>A growing mentor–mentee programme was coordinated by hand: onboarding, reminders and feedback all depended on staff chasing people, and there was little visibility into engagement.</p>
+              <h4>What I did</h4>
+              <ul>
+                <li>Configured a role-based mentoring platform for mentors, mentees and programme admins</li>
+                <li>Orchestrated automated onboarding, notification and feedback workflows</li>
+                <li>Delivered engagement dashboards so the team could see who was active and where to step in</li>
+              </ul>
+            </div>
+            <div class="case-results">
+              <div class="result"><strong>15,000+</strong><span>Users served</span></div>
+              <div class="result"><strong>−40%</strong><span>Manual coordination effort</span></div>
+              <div class="result"><strong>+25%</strong><span>Platform usage</span></div>
+            </div>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <form name="contact" class="contact-form" netlify netlify-honeypot="bot-field" action="/thank-you.html">
-                    <input type="text" name="bot-field" style="display: none;">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
-                <div class="contact-info">
-                    <a href="mailto:manikyakolekar@gmail.com" class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <strong>Email</strong>
-                            <span>manikyakolekar@gmail.com</span>
-                        </div>
-                    </a>
-                    <a href="tel:+918660500414" class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <strong>Phone</strong>
-                            <span>+91 8660500414</span>
-                        </div>
-                    </a>
-                    <a href="https://linkedin.com/in/manikya-r-k" target="_blank" class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <div>
-                            <strong>LinkedIn</strong>
-                            <span>linkedin.com/in/manikya-r-k</span>
-                        </div>
-                    </a>
-                    <a href="https://github.com/manikya-r-k" target="_blank" class="contact-item">
-                        <i class="fab fa-github"></i>
-                        <div>
-                            <strong>GitHub</strong>
-                            <span>github.com/manikya-r-k</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
+    <!-- Approach -->
+    <section id="approach" class="section alt">
+      <div class="wrap">
+        <p class="kicker">How I work</p>
+        <h2>From kickoff to hand-off.</h2>
+        <ol class="steps">
+          <li><span class="step-n">01</span><h4>Discover</h4><p>Workshops with stakeholders to map real processes, edge cases and success criteria.</p></li>
+          <li><span class="step-n">02</span><h4>Design</h4><p>Solution design, integration specs and configuration plans everyone signs off on.</p></li>
+          <li><span class="step-n">03</span><h4>Build &amp; integrate</h4><p>APIs, pipelines, validation rules and sync jobs connecting SAP, Salesforce and the platform.</p></li>
+          <li><span class="step-n">04</span><h4>Migrate</h4><p>Clean, load and reconcile data with SQL and Python so go-live starts from truth.</p></li>
+          <li><span class="step-n">05</span><h4>UAT &amp; go-live</h4><p>Lead UAT through sign-off, then support the launch through stabilization.</p></li>
+          <li><span class="step-n">06</span><h4>Enable</h4><p>Train users and hand off cleanly to Customer Success with documentation.</p></li>
+        </ol>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Manikya Kolekar. All rights reserved.</p>
-            <p class="footer-sub">Implementation Engineer & Data Specialist</p>
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <div class="wrap">
+        <p class="kicker">Toolkit</p>
+        <h2>Skills &amp; tools.</h2>
+        <div class="skills">
+          <div class="skill-group">
+            <h4><i class="fas fa-code"></i> Languages &amp; scripting</h4>
+            <div class="chips"><span>Python</span><span>SQL</span><span>JavaScript</span></div>
+          </div>
+          <div class="skill-group">
+            <h4><i class="fas fa-plug"></i> Integration &amp; automation</h4>
+            <div class="chips"><span>REST APIs</span><span>SAP Data Integration</span><span>Salesforce Integration</span><span>Workflow Automation</span><span>Data Pipelines</span><span>Cron Scheduling</span></div>
+          </div>
+          <div class="skill-group">
+            <h4><i class="fas fa-database"></i> Data &amp; databases</h4>
+            <div class="chips"><span>MySQL</span><span>PostgreSQL</span><span>Pandas</span><span>NumPy</span></div>
+          </div>
+          <div class="skill-group">
+            <h4><i class="fas fa-screwdriver-wrench"></i> Tools</h4>
+            <div class="chips"><span>Postman</span><span>Git</span></div>
+          </div>
+          <div class="skill-group wide">
+            <h4><i class="fas fa-diagram-project"></i> Implementation concepts</h4>
+            <div class="chips"><span>SaaS Implementation</span><span>Master Data Management</span><span>ETL</span><span>Data Migration</span><span>Client Onboarding</span><span>UAT</span><span>Requirements Gathering</span><span>Production Support</span></div>
+          </div>
         </div>
-    </footer>
 
-    <script src="script.js"></script>
+        <div class="edu">
+          <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div>
+            <h4>SDM Institute of Technology, Mangalore</h4>
+            <p>Bachelor of Engineering, Information Science · Dec 2020 — May 2024</p>
+          </div>
+          <div class="edu-gpa"><strong>8.86</strong><span>/ 10 GPA</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section contact">
+      <div class="wrap contact-grid">
+        <div>
+          <p class="kicker light">Contact</p>
+          <h2>Have an implementation that needs an owner?</h2>
+          <p class="contact-lead">I'm happy to talk about SaaS implementations, integrations or data automation. Drop a message and I'll get back to you.</p>
+          <ul class="contact-list">
+            <li><a href="mailto:manikyakolekar@gmail.com"><i class="fas fa-envelope"></i> manikyakolekar@gmail.com</a></li>
+            <li><a href="tel:+918660500414"><i class="fas fa-phone"></i> +91 86605 00414</a></li>
+            <li><a href="https://linkedin.com/in/manikya-r-k" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i> linkedin.com/in/manikya-r-k</a></li>
+            <li><a href="https://github.com/manikya-rk" target="_blank" rel="noopener"><i class="fab fa-github"></i> github.com/manikya-rk</a></li>
+          </ul>
+        </div>
+        <form name="contact" method="POST" class="contact-form" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+          <input type="hidden" name="form-name" value="contact">
+          <p class="hidden"><label>Leave blank <input name="bot-field"></label></p>
+          <label>Name<input type="text" name="name" required></label>
+          <label>Email<input type="email" name="email" required></label>
+          <label>Message<textarea name="message" rows="5" required></textarea></label>
+          <button type="submit" class="btn btn-primary">Send message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <p>&copy; <span id="year">2026</span> Manikya Kolekar</p>
+      <a href="#top">Back to top <i class="fas fa-arrow-up"></i></a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
-
 </html>

@@ -1,154 +1,58 @@
-// Active Nav Link on Scroll
-const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('.nav-links a');
+// Sticky nav border
+const nav = document.querySelector('.nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 10));
 
-function activateNavLink() {
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= (sectionTop - 100)) {
-            current = section.getAttribute('id');
-        }
-    });
+// Mobile menu
+const toggle = document.querySelector('.menu-toggle');
+const links = document.querySelector('.nav-links');
+toggle.addEventListener('click', () => {
+  const open = links.classList.toggle('open');
+  toggle.querySelector('i').className = open ? 'fas fa-xmark' : 'fas fa-bars';
+});
+links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  links.classList.remove('open');
+  toggle.querySelector('i').className = 'fas fa-bars';
+}));
 
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-}
-
-window.addEventListener('scroll', activateNavLink);
-
-// Mobile Menu Toggle
-const menuToggle = document.querySelector('.menu-toggle');
-const navLinksContainer = document.querySelector('.nav-links');
-
-menuToggle.addEventListener('click', () => {
-    navLinksContainer.classList.toggle('active');
-    menuToggle.classList.toggle('active');
-    
-    // Change icon
-    const icon = menuToggle.querySelector('i');
-    if (navLinksContainer.classList.contains('active')) {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-times');
-    } else {
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
+// Active link on scroll
+const sections = document.querySelectorAll('main section[id]');
+const navAnchors = document.querySelectorAll('.nav-links a');
+const spy = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navAnchors.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
     }
-});
+  });
+}, { rootMargin: '-45% 0px -50% 0px' });
+sections.forEach(s => spy.observe(s));
 
-// Close menu when clicking a link
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navLinksContainer.classList.remove('active');
-        menuToggle.classList.remove('active');
-        const icon = menuToggle.querySelector('i');
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
-    });
-});
+// Reveal on scroll
+const revealEls = document.querySelectorAll('.section h2, .prose, .job, .case, .steps li, .skill-group, .edu, .contact-form');
+revealEls.forEach(el => el.classList.add('reveal'));
+const revealer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); revealer.unobserve(e.target); }
+  });
+}, { threshold: 0.12 });
+revealEls.forEach(el => revealer.observe(el));
 
-// Smooth Scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            targetElement.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
+// Count-up metrics
+const counters = document.querySelectorAll('[data-count]');
+const countObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target, end = +el.dataset.count, suffix = el.dataset.suffix || '';
+    const start = performance.now(), dur = 1200;
+    const tick = now => {
+      const p = Math.min((now - start) / dur, 1);
+      el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+    countObs.unobserve(el);
+  });
+}, { threshold: 0.6 });
+counters.forEach(c => countObs.observe(c));
 
-// Form Submission
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const submitButton = this.querySelector('button[type="submit"]');
-        const originalText = submitButton.textContent;
-        
-        // Show loading state
-        submitButton.disabled = true;
-        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-        
-        // Simulate form submission
-        setTimeout(() => {
-            submitButton.innerHTML = '<i class="fas fa-check"></i> Sent Successfully!';
-            submitButton.style.background = '#4CAF50';
-            
-            // Reset form
-            setTimeout(() => {
-                contactForm.reset();
-                submitButton.disabled = false;
-                submitButton.innerHTML = originalText;
-                submitButton.style.background = '';
-            }, 2000);
-        }, 1500);
-    });
-}
-
-// Animation on scroll (simple implementation)
-function animateOnScroll() {
-    const experienceCards = document.querySelectorAll('.experience-card');
-    const projectCards = document.querySelectorAll('.project-card');
-    
-    experienceCards.forEach(card => {
-        const cardTop = card.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        
-        if (cardTop < windowHeight - 100) {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-        }
-    });
-    
-    projectCards.forEach(card => {
-        const cardTop = card.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        
-        if (cardTop < windowHeight - 100) {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-        }
-    });
-}
-
-// Set initial state for animation
-document.addEventListener('DOMContentLoaded', () => {
-    const experienceCards = document.querySelectorAll('.experience-card');
-    const projectCards = document.querySelectorAll('.project-card');
-    
-    experienceCards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    });
-    
-    projectCards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    });
-    
-    setTimeout(() => {
-        animateOnScroll();
-    }, 100);
-});
-
-window.addEventListener('scroll', animateOnScroll);
-
-// Initialize
-document.addEventListener('DOMContentLoaded', () => {
-    activateNavLink();
-    animateOnScroll();
-});
+// Footer year
+document.getElementById('year').textContent = new Date().getFullYear();
